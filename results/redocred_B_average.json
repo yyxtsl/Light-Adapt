@@ -1,0 +1,15 @@
+{
+  "B-average": {
+    "test_F1": 80.89558244474463,
+    "test_precision": 81.1357739982704,
+    "test_recall": 80.65680880330123,
+    "test_IgnF1_annotated": 79.66674366979461,
+    "test_IgnF1_distant": null,
+    "TP": 14073,
+    "FP": 3272,
+    "FN": 3375,
+    "gold": 17448,
+    "predicted": 17345,
+    "overlap_Human": 1983
+  }
+}

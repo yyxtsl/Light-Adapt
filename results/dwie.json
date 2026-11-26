@@ -1,0 +1,330 @@
+{
+  "metrics": {
+    "C75": {
+      "primary_full_id": {
+        "tp": 2311,
+        "fp": 674,
+        "fn": 372,
+        "precision": 0.7742043551088778,
+        "recall": 0.8613492359299292,
+        "f1": 0.81545518701482
+      },
+      "slices": {
+        "anchored_endpoints": {
+          "tp": 2140,
+          "fp": 365,
+          "fn": 313,
+          "precision": 0.8542914171656687,
+          "recall": 0.8724011414594374,
+          "f1": 0.8632513110125051
+        },
+        "unanchored_endpoint": {
+          "tp": 171,
+          "fp": 309,
+          "fn": 59,
+          "precision": 0.35625,
+          "recall": 0.7434782608695653,
+          "f1": 0.48169014084507045
+        },
+        "self": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "nonself": {
+          "tp": 2311,
+          "fp": 674,
+          "fn": 372,
+          "precision": 0.7742043551088778,
+          "recall": 0.8613492359299292,
+          "f1": 0.81545518701482
+        },
+        "train_known": {
+          "tp": 2311,
+          "fp": 674,
+          "fn": 371,
+          "precision": 0.7742043551088778,
+          "recall": 0.8616703952274422,
+          "f1": 0.8155990824069173
+        },
+        "train_unknown": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "official_metrics_are_supplemental_not_id_equivalent": true,
+      "official_expanded_clusters": {
+        "soft": {
+          "precision": 0.8542914171656687,
+          "recall": 0.8724011414594374,
+          "f1": 0.8632513110125051
+        },
+        "hard": {
+          "precision": 0.8626465661641541,
+          "recall": 0.8737699355276553,
+          "f1": 0.8681726230613621
+        },
+        "gold_entity_clusters_provided": true,
+        "empty_clusters_can_collapse_distinct_concept_ids": true
+      }
+    },
+    "B75": {
+      "primary_full_id": {
+        "tp": 2143,
+        "fp": 425,
+        "fn": 540,
+        "precision": 0.8345015576323987,
+        "recall": 0.7987327618337682,
+        "f1": 0.8162254808607884
+      },
+      "slices": {
+        "anchored_endpoints": {
+          "tp": 2139,
+          "fp": 420,
+          "fn": 314,
+          "precision": 0.835873388042204,
+          "recall": 0.8719934773746433,
+          "f1": 0.8535514764565044
+        },
+        "unanchored_endpoint": {
+          "tp": 4,
+          "fp": 5,
+          "fn": 226,
+          "precision": 0.4444444444444444,
+          "recall": 0.017391304347826087,
+          "f1": 0.03347280334728033
+        },
+        "self": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "nonself": {
+          "tp": 2143,
+          "fp": 425,
+          "fn": 540,
+          "precision": 0.8345015576323987,
+          "recall": 0.7987327618337682,
+          "f1": 0.8162254808607884
+        },
+        "train_known": {
+          "tp": 2143,
+          "fp": 425,
+          "fn": 539,
+          "precision": 0.8345015576323987,
+          "recall": 0.7990305741983594,
+          "f1": 0.8163809523809524
+        },
+        "train_unknown": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "official_metrics_are_supplemental_not_id_equivalent": true,
+      "official_expanded_clusters": {
+        "soft": {
+          "precision": 0.835873388042204,
+          "recall": 0.8719934773746433,
+          "f1": 0.8535514764565044
+        },
+        "hard": {
+          "precision": 0.8364485981308412,
+          "recall": 0.7991071428571429,
+          "f1": 0.817351598173516
+        },
+        "gold_entity_clusters_provided": true,
+        "empty_clusters_can_collapse_distinct_concept_ids": true
+      }
+    },
+    "D75": {
+      "primary_full_id": {
+        "tp": 2109,
+        "fp": 405,
+        "fn": 574,
+        "precision": 0.8389021479713604,
+        "recall": 0.7860603801714499,
+        "f1": 0.8116220896671157
+      },
+      "slices": {
+        "anchored_endpoints": {
+          "tp": 2109,
+          "fp": 405,
+          "fn": 344,
+          "precision": 0.8389021479713604,
+          "recall": 0.8597635548308195,
+          "f1": 0.8492047513589692
+        },
+        "unanchored_endpoint": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 230,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "self": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "nonself": {
+          "tp": 2109,
+          "fp": 405,
+          "fn": 574,
+          "precision": 0.8389021479713604,
+          "recall": 0.7860603801714499,
+          "f1": 0.8116220896671157
+        },
+        "train_known": {
+          "tp": 2109,
+          "fp": 405,
+          "fn": 573,
+          "precision": 0.8389021479713604,
+          "recall": 0.7863534675615212,
+          "f1": 0.8117782909930716
+        },
+        "train_unknown": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "official_metrics_are_supplemental_not_id_equivalent": true,
+      "official_expanded_clusters": {
+        "soft": {
+          "precision": 0.8389021479713604,
+          "recall": 0.8597635548308195,
+          "f1": 0.8492047513589692
+        },
+        "hard": {
+          "precision": 0.8389021479713604,
+          "recall": 0.7860603801714499,
+          "f1": 0.8116220896671156
+        },
+        "gold_entity_clusters_provided": true,
+        "empty_clusters_can_collapse_distinct_concept_ids": true
+      }
+    },
+    "G75": {
+      "primary_full_id": {
+        "tp": 2142,
+        "fp": 370,
+        "fn": 541,
+        "precision": 0.8527070063694268,
+        "recall": 0.7983600447260529,
+        "f1": 0.8246390760346487
+      },
+      "slices": {
+        "anchored_endpoints": {
+          "tp": 2142,
+          "fp": 370,
+          "fn": 311,
+          "precision": 0.8527070063694268,
+          "recall": 0.8732164696290257,
+          "f1": 0.8628398791540786
+        },
+        "unanchored_endpoint": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 230,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "self": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "nonself": {
+          "tp": 2142,
+          "fp": 370,
+          "fn": 541,
+          "precision": 0.8527070063694268,
+          "recall": 0.7983600447260529,
+          "f1": 0.8246390760346487
+        },
+        "train_known": {
+          "tp": 2142,
+          "fp": 370,
+          "fn": 540,
+          "precision": 0.8527070063694268,
+          "recall": 0.7986577181208053,
+          "f1": 0.8247978436657682
+        },
+        "train_unknown": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      },
+      "official_metrics_are_supplemental_not_id_equivalent": true,
+      "official_expanded_clusters": {
+        "soft": {
+          "precision": 0.8527070063694268,
+          "recall": 0.8732164696290257,
+          "f1": 0.8628398791540784
+        },
+        "hard": {
+          "precision": 0.8527070063694268,
+          "recall": 0.7983600447260529,
+          "f1": 0.8246390760346487
+        },
+        "gold_entity_clusters_provided": true,
+        "empty_clusters_can_collapse_distinct_concept_ids": true
+      }
+    }
+  },
+  "differences_pp": {
+    "B75-C75": {
+      "f1": 0.07702938459683839,
+      "precision": 6.029720252352099,
+      "recall": -6.2616474096161
+    },
+    "B75-D75": {
+      "f1": 0.4603391193672701,
+      "precision": -0.4400590338961674,
+      "recall": 1.2672381662318322
+    },
+    "B75-G75": {
+      "f1": -0.8413595173860311,
+      "precision": -1.8205448737028007,
+      "recall": 0.0372717107715248
+    },
+    "D75-G75": {
+      "f1": -1.3016986367533012,
+      "precision": -1.3804858398066333,
+      "recall": -1.2299664554603074
+    }
+  },
+  "primary": "B75-C75 full-ID micro-F1",
+  "single_fixed_seed": 75,
+  "official_metrics_supplemental": true,
+  "label_inventory_train_only": true
+}

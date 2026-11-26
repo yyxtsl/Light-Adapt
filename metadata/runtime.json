@@ -1,0 +1,13 @@
+{
+  "python": "3.10.22",
+  "packages_verified_20261126": {
+    "torch": "2.7.1+cu128",
+    "transformers": "4.34.0",
+    "numpy": "1.24.3",
+    "tqdm": "4.65.0",
+    "Unidecode": "1.3.7",
+    "opt-einsum": null
+  },
+  "paper_hardware": "NVIDIA RTX 5090, FP32",
+  "inspection": "Package distribution metadata only; no torch import or model execution."
+}

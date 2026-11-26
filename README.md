@@ -9,6 +9,20 @@ checkpoint, target objective and paired target seeds. The repository contains
 the recorded implementations, benchmark configuration, reference results and
 portable Re-DocRED commands.
 
+## Get the code and check the download
+
+```bash
+git clone https://github.com/yyxtsl/Light-Adapt.git
+cd Light-Adapt
+python verify_repository.py
+```
+
+You can also use GitHub's **Code > Download ZIP** and run the same check from
+the extracted directory. The repository root includes `scripts/`, `meta/`,
+`metadata/`, `docs/`, `results/` and `refine-logs/`. The check verifies the full
+file list, source checksums and archived metric counts using the standard
+library. It runs without loading models or benchmark text.
+
 ## Environment
 
 The recorded environment uses Python 3.10.22, PyTorch 2.7.1+cu128,
@@ -52,6 +66,8 @@ concepts, and uses 602 training, 100 development and 100 test documents with
 
 The exact source checkpoint has been retained by the authors. Its distribution
 location is a release-preparation item recorded in `docs/DATA_AND_MODELS.md`.
+`metadata/checkpoints.json` lists the source and target checkpoint identities,
+their roles and their distribution status.
 
 ## Portable Re-DocRED commands
 
@@ -59,7 +75,7 @@ Inspect the command-line interface and validate paths before starting a run.
 
 ```bash
 python reproduce_redocred.py --help
-python check_reproduce_redocred_cli.py
+python -B check_reproduce_redocred_cli.py
 python reproduce_redocred.py --mode validate --validate-for train --variant B \
   --model-dir assets/roberta-large --data-dir assets/redocred \
   --checkpoint assets/checkpoints/source.pth
@@ -96,6 +112,14 @@ Use `--variant C` with the same source for full-path target training. Evaluate
 the averaged B checkpoint with `--variant B` and
 `--checkpoint runs/B-average/averaged_model.pth`. Test scoring requires the
 explicit `--split test` argument. Each output directory is created as a new run.
+
+For a Dev evaluation of the averaged B checkpoint, use
+
+```bash
+python reproduce_redocred.py --mode evaluate --variant B --split dev \
+  --model-dir assets/roberta-large --data-dir assets/redocred \
+  --checkpoint runs/B-average/averaged_model.pth --output-dir runs/B-average-dev
+```
 
 The target protocol uses ATGL with alpha 16.5, FP32, batch size 4, 30 epochs,
 backbone/head learning rates 3e-5/1e-5, AdamW epsilon 1e-6, weight decay 0.01,

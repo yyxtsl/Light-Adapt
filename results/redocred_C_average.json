@@ -1,0 +1,12 @@
+{
+  "test_F1": 80.81385281385282,
+  "test_precision": 81.39169863969306,
+  "test_recall": 80.24415405777167,
+  "test_IgnF1_annotated": 79.59628073757608,
+  "test_IgnF1_distant": null,
+  "TP": 14001,
+  "FP": 3201,
+  "FN": 3447,
+  "predicted": 17202,
+  "gold": 17448
+}

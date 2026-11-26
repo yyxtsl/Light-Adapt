@@ -1,0 +1,109 @@
+{
+  "generic_encoder": {
+    "repository": "FacebookAI/roberta-large",
+    "revision": "722cf37b1afa9454edce342e7895e588b6ff1d59",
+    "url": "https://huggingface.co/FacebookAI/roberta-large/tree/722cf37b1afa9454edce342e7895e588b6ff1d59"
+  },
+  "recorded_checkpoints": [
+    {
+      "id": "Stage-1-source",
+      "role": "Shared local distant-pretraining initialization for C and B",
+      "suggested_filename": "source.pth",
+      "sha256": "4fd5aca22c20584dde442c2d80dba8a72db8fe20a4b9fa920fa7c43a7fe13ce9",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "C75",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "C75.pth",
+      "sha256": "f795bfc8c51f4b740d55abe992811e728481f36a4167b43036cbb8ca46673c37",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "B75",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "B75.pth",
+      "sha256": "cfe8c2685c7ab65975ed7ab82ae3cdf565a50a2e1f7a9cd3042969365d9d26d8",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "D75",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "D75.pth",
+      "sha256": "03cce3c6a150707b89ed36501689e59ecdc00cb19c874fb5daeb312d5bc54b5d",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "C76",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "C76.pth",
+      "sha256": "04985ff6a7d1cf904bc1be14f6d94dd2d080996256ee31b850cb70a9253ed6e3",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "B76",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "B76.pth",
+      "sha256": "fefa5d454a1f817aba15296cd297c271be689eef6871a6c480fe01c25783723c",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "D76",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "D76.pth",
+      "sha256": "961ab8cac555b2bd9b57ad050b2114c245183ed97dd14bf947869ba4b3b2695d",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "C77",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "C77.pth",
+      "sha256": "28e6f9fd427a8b85df11ac7a9415a99e1b4295fdb6ca57369268ce4a1c309ac0",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "B77",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "B77.pth",
+      "sha256": "a576992d1f8b7a42bfafc23e6c05f319e674e692311222c4e10a51aeac186940",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "D77",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "D77.pth",
+      "sha256": "083b47a1d668514f4e886831f5ab54b1273c2bc05b6766e6f2fb46f976f87a2f",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "G75",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "G75.pth",
+      "sha256": "3877b53be14a51cb7afbd067efb60a1bd7b602098fc56c991bd18bfca664bd80",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    },
+    {
+      "id": "U75",
+      "role": "Dev-selected target checkpoint",
+      "suggested_filename": "U75.pth",
+      "sha256": "da522312c1a80a602aea49778cfc43f90211df035f036fde55d58401262b3d0e",
+      "download_url": null,
+      "distribution_status": "author distribution route pending"
+    }
+  ],
+  "availability_checked": "2026-11-26 author research server, file existence and size only",
+  "historical_hashes_recomputed_on_server_this_session": false,
+  "C75_off": "Use C75 with the C-off evaluation variant.",
+  "B_average": "Generate from the three identified B75/B76/B77 states with equal weights."
+}
