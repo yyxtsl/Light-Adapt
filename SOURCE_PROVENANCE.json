@@ -1,0 +1,357 @@
+{
+  "upstream": "https://github.com/chufangao/TTM-RE",
+  "upstream_initial_revision": "6c86abdfbe38d1e12e991ea54cbeac8d057c2219",
+  "selection": "Named final-study entry points and their local Python import dependency closure.",
+  "files": {
+    "evaluation.py": {
+      "sha256": "ac760f79d39957c7ab6ffb8a33784330677d83482f44acec92bee25d280e52d2",
+      "bytes": 6359,
+      "origin": "remote-verified-source"
+    },
+    "model2.py": {
+      "sha256": "9c9ef5c15ab585f8477d9d7534cf1615348e9c8f8e968de20179a97a53dbdc11",
+      "bytes": 21919,
+      "origin": "remote-verified-source"
+    },
+    "prepro.py": {
+      "sha256": "e05cd6e6b68ec3a81bbe1f4e1f4735660f4607cd485e36c46c1737ef58bfbead",
+      "bytes": 11271,
+      "origin": "remote-verified-source"
+    },
+    "scripts/check_ttmre_dwie_adaptation.py": {
+      "sha256": "85e0f7b4f1c93e32614792a5eaeea405e51b6d944d7098734ef263f2b7537908",
+      "bytes": 35830,
+      "origin": "remote-verified-source"
+    },
+    "scripts/check_ttmre_dwie_generic_budget_replacement.py": {
+      "sha256": "05e6b10c6fcd1dc722828cb874a6fc1371d60711c273a68a2414acdd84a6762f",
+      "bytes": 5143,
+      "origin": "remote-verified-source"
+    },
+    "scripts/check_ttmre_dwie_generic_claim_isolation.py": {
+      "sha256": "fdabb0599ec3884369301b76b4c167a7860434cf7be5ea2a332d8870af3f52e0",
+      "bytes": 26835,
+      "origin": "remote-verified-source"
+    },
+    "scripts/check_ttmre_dwie_generic_control.py": {
+      "sha256": "0b3a7cd6e68cb087dc864a391078097cc868fb69528b79ef553dc829fca5740c",
+      "bytes": 21516,
+      "origin": "remote-verified-source"
+    },
+    "scripts/check_ttmre_dwie_gpu_probe_v4.py": {
+      "sha256": "f34cbe116c1e88ad9ea96cfc45b7446bd4b44453b09a81213206c5f94eb96748",
+      "bytes": 11999,
+      "origin": "remote-verified-source"
+    },
+    "scripts/check_ttmre_dwie_runtime_fix.py": {
+      "sha256": "197afc107ff1a8fad5db89268cc546124fbdb805ec35edcc3c3bd557cd7eab23",
+      "bytes": 6654,
+      "origin": "remote-verified-source"
+    },
+    "scripts/check_ttmre_nvidia_smi_preflight.py": {
+      "sha256": "971997551dec48ff1292c0c03e68b6a9a03ff7e8a50802fa7075d0ce0b7aeb65",
+      "bytes": 2486,
+      "origin": "remote-verified-source"
+    },
+    "scripts/evaluate_ttmre_atgl_soup.py": {
+      "sha256": "b63c9b8566b6794c1b4e18bb9765e1fa96ae5c152e659ad89aa5aa70147cf2e5",
+      "bytes": 26653,
+      "origin": "remote-verified-source"
+    },
+    "scripts/evaluate_ttmre_atgl_soup_diagnostic.py": {
+      "sha256": "94e4b2fc592a215fae99ae10c670d420dd100459b8cc3d333c7894083140e969",
+      "bytes": 28514,
+      "origin": "remote-verified-source"
+    },
+    "scripts/evaluate_ttmre_c_off_control.py": {
+      "sha256": "306a0ce223e44516653dab37a5c9b5d4171622315982b5793467e7e5568fa05c",
+      "bytes": 19544,
+      "origin": "remote-verified-source"
+    },
+    "scripts/evaluate_ttmre_dwie_fixed_test.py": {
+      "sha256": "859220f058706fbb0ed5c40d01ca5b5099247a6de083927eb9a2dabf131df8ca",
+      "bytes": 31380,
+      "origin": "remote-verified-source"
+    },
+    "scripts/evaluate_ttmre_entity_scale_latency.py": {
+      "sha256": "6e536eadac96349640e8e8088f5a92afd6741c95dfdc43054aa77a182394afc6",
+      "bytes": 17110,
+      "origin": "remote-verified-source"
+    },
+    "scripts/evaluate_ttmre_final_fixed_test.py": {
+      "sha256": "36a84e832362ccc3b5e2c84da0ca766a8541d76892fb4cf47054701561271a07",
+      "bytes": 25754,
+      "origin": "remote-verified-source"
+    },
+    "scripts/evaluate_ttmre_lightweight_average.py": {
+      "sha256": "eeb5654ce1e7ddc32ee2997caf87cb9c9f62be944bd048d9ec13631529112129",
+      "bytes": 17050,
+      "origin": "remote-verified-source"
+    },
+    "scripts/evaluate_ttmre_locked_test.py": {
+      "sha256": "03e34a1e8888e77d377d29be5454c24c74ea39bacb98050dd6cc69426809d031",
+      "bytes": 29953,
+      "origin": "remote-verified-source"
+    },
+    "scripts/inventory_ttmre_redocred_generic_control.py": {
+      "sha256": "3136785e986a7aa89ca28e4efe64ee781b7a27162249b68eeceb2a77b9fac4e8",
+      "bytes": 4689,
+      "origin": "remote-verified-source"
+    },
+    "scripts/prepare_dwie_adaptation.py": {
+      "sha256": "a9dc60fa4f5809e0a0d69e9cd1471fedcd2b3d9d14cbbde1944d5d7b99c0cb2c",
+      "bytes": 15885,
+      "origin": "remote-verified-source"
+    },
+    "scripts/prepare_dwie_cpu_admission.py": {
+      "sha256": "ee47103b64fcaf052a7f58a3f1e60b1ee055022f14a32087315854129bfe33f8",
+      "bytes": 15616,
+      "origin": "remote-verified-source"
+    },
+    "scripts/prepare_ttmre_assets.py": {
+      "sha256": "93c67b4105b9d173507effa3c5e6e3ddc3442a82ac4fc396050adb2f8f792a43",
+      "bytes": 6506,
+      "origin": "remote-verified-source"
+    },
+    "scripts/recover_ttmre_dwie_generic_contracts.py": {
+      "sha256": "649026e1d2961da53638910be49a398d92cd67618aad9440c96f3bc0dc93a0bf",
+      "bytes": 12115,
+      "origin": "remote-verified-source"
+    },
+    "scripts/recover_ttmre_dwie_runtime_check.py": {
+      "sha256": "e683a827ec39ef34bcd0dfdf8ba8a10d16e1482f77ff4bc4594d8804ddc5172a",
+      "bytes": 10315,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_atgl_human.py": {
+      "sha256": "83c174f3c48f1aeb672692922dde38f6d74d3160af856a0388a58ae2f7a2bfef",
+      "bytes": 18376,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_atgl_nokl_human.py": {
+      "sha256": "c13d8fcf2c7a9f35c9b1b42aa6734bd01da999fa84752303682272550dd71b0e",
+      "bytes": 35478,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_atgl_rdrop_human.py": {
+      "sha256": "7fe0bc9748c25ffcd22816a31a6c9392f5a9520765736e6dfa717ba0fce45ced",
+      "bytes": 31749,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_atgl_view_repeat.py": {
+      "sha256": "91685c74abcbdc2631d487c23fa0678739a9bd51288f8ce436e46153d93db862",
+      "bytes": 41885,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_b2_5090.py": {
+      "sha256": "236d0db158e491facc167a3ec3980475268f7cab603a96f48de5cce6127a1838",
+      "bytes": 20765,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_baseline_aligned.py": {
+      "sha256": "8436a02d3addd6b2847961872ff8d562281ae0631a65c19e759f6ae23e89d655",
+      "bytes": 25681,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_bypass_repeat.py": {
+      "sha256": "65fa7a6a13ea8733a97f6882c50e9f0e72726ad43f46f9b42f83fda5b798df3c",
+      "bytes": 23815,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_bypass_source_control.py": {
+      "sha256": "ad1bdb0819e3d6411e48ebb23737b24bdf5dc73ab99d8d01cdf73c821c022cd8",
+      "bytes": 29255,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_bypass_source_repeat.py": {
+      "sha256": "1df31c718f2f2eeb1196d3ff48ac8bb708c2041e40fe73479740535f2875a877",
+      "bytes": 21942,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_dwie_adaptation.py": {
+      "sha256": "4b5e37f89e8a1085781a01fa3531cd7c0e41df7f4fe58815ab31d704cb5a10fd",
+      "bytes": 61299,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_dwie_generic_budget_replacement.py": {
+      "sha256": "e54fabc1435f6735e7a031822daefb27aaa657830135358591ee1da8eae9021e",
+      "bytes": 26619,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_dwie_generic_control.py": {
+      "sha256": "15470cc9874f2ecf5ca1808e3565d295966b31e0bd8920dc7d5a98ed4fae8321",
+      "bytes": 23346,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_human_distant.py": {
+      "sha256": "c69d4b6102091d14165e7032a03aa2c40bfb26a2f88378ffe0cb1ad4bb2d8366",
+      "bytes": 35623,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_human_only.py": {
+      "sha256": "4ef536052f5896beaa611fcfb1e86aeafa37f2d9b5a868c80ca239dc80117ecf",
+      "bytes": 18309,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_memory_noise.py": {
+      "sha256": "07b71a6c4399322a15846cf7af92f18fb29a9c6aa9fecd7e1381c43cce246126",
+      "bytes": 39604,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_memory_read.py": {
+      "sha256": "79d4f07da6d3bee77ed4db426d6fecf167db68f0e657437f01a0437ef7bd7568",
+      "bytes": 27496,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_n1_full_seed75.py": {
+      "sha256": "970201baa0908395e837b9f8393da2df7cc5d0da67a8f677134b490f5b160980",
+      "bytes": 53587,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_n1_full_seed75_restart20h.py": {
+      "sha256": "9c07c96f9d963a483fb9cb6219d6c78e45d378dadd4edd7fbc5292f59fd636fd",
+      "bytes": 8542,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_n1_weighted_completion.py": {
+      "sha256": "54753fb4a830f1406b9744d42c90ed859fab04e1845624dc426676dae6500b42",
+      "bytes": 27537,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_nonempty_head.py": {
+      "sha256": "df1d2d667cacc299858fd616a245f932fd3e3a7c50378d3331a31feacf8c0140",
+      "bytes": 45382,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_pair_replacement.py": {
+      "sha256": "36d3ed54a83d2705c029ff57ba1d83fba2582fa95566e842cd360ee272bcc2b0",
+      "bytes": 32923,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_redocred_generic_control.py": {
+      "sha256": "856bccac0ce9373027316b5c6e0ac0209f5a49c4703ab35887c6cfd0ae459b70",
+      "bytes": 27934,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_spu_soup_control.py": {
+      "sha256": "4b081280ba2f4dc1a4ce6c6385947fd73d3f281e2f313195387db7d2a77b0bbb",
+      "bytes": 37751,
+      "origin": "remote-verified-source"
+    },
+    "scripts/train_ttmre_untied_pair_control.py": {
+      "sha256": "c60858e7ccf861019b814cf451d17060937589a327f74bc7ea897ea3092a43a1",
+      "bytes": 28505,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_dwie_gpu_probe_v4.py": {
+      "sha256": "456009f64d9c5751f5ebbe27873b03b61baea599a8d40a99180fe614eee543b1",
+      "bytes": 41623,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_dwie_input.py": {
+      "sha256": "d4cab72ebbd468d90e7a29160954d6592a0ac6ed48803be9a4c8a35c5dbef2f2",
+      "bytes": 14300,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_dwie_runtime_fix.py": {
+      "sha256": "f83769948090f04c424329e9f3436ba3527c882b6422e4326444a7737165dc20",
+      "bytes": 3578,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_full_model_check.py": {
+      "sha256": "5f54e5cff0cf8f8035aef97cec0160ba0c1ed299ce2552f83eb9d1b2864e64f5",
+      "bytes": 6654,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_human_distant_data.py": {
+      "sha256": "b7604332782ef90c77cc141b17c95776cd127c854b1b93f6a3dd7d9382d2308e",
+      "bytes": 12056,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_memory_fit.py": {
+      "sha256": "f1e2e41e6e7368d6f11be4a3333a1febb237c2fe6300f48b6ed1eba09650a1da",
+      "bytes": 3154,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_memory_noise.py": {
+      "sha256": "3ded9be965902c5fcd51e8555b05691eccdb93341820acbd7dae7d462ec4e7a3",
+      "bytes": 5067,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_memory_noise_preflight.py": {
+      "sha256": "2ddb1a0ce5eb002304fb98bc1b97a93db11185a936fe944425806ac1d4e53145",
+      "bytes": 28499,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_nonempty_head.py": {
+      "sha256": "b08bfb20b6515db2fdefb46976bc26f2034297c28532d1811845006fcbd51388",
+      "bytes": 12431,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_nvidia_smi_preflight.py": {
+      "sha256": "f152891288df0cf095ab5f926a56297d41287068fb370e9b1cd0d07ceb294633",
+      "bytes": 3065,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_pair_read.py": {
+      "sha256": "530ee978e19e536accadf5aa2f02e23678dabdf8fb98b970a493a59abcd787d0",
+      "bytes": 6475,
+      "origin": "remote-verified-source"
+    },
+    "scripts/ttmre_pair_replacement.py": {
+      "sha256": "7ded529adafe3bf30363333287cedf4f3e607d106fd9805a4a786ac4cd6be70f",
+      "bytes": 3534,
+      "origin": "remote-verified-source"
+    },
+    "ttm.py": {
+      "sha256": "c9677d704b94f9e8a48e7707c806f2531acfa2efbd88a4017fc78d2a8c74decc",
+      "bytes": 12416,
+      "origin": "remote-verified-source"
+    },
+    "LICENSE": {
+      "sha256": "87d937bc1b5d5f921efd2ecd17bde42a90d201ad32a064c2c7284355bd7eda36",
+      "bytes": 1067,
+      "origin": "local-archived-source"
+    },
+    "meta/rel2id.json": {
+      "sha256": "b671eee2c3edb7bd44bede98ce6e292cbd154bbf9202c939b816c5a79063b5e3",
+      "bytes": 1141,
+      "origin": "remote-verified-source"
+    },
+    "meta/relation_map.json": {
+      "sha256": "ce15fe45203f4513192b8f5712909353bbd5ad7652badb6d61d8f9e1103fcd5d",
+      "bytes": 532,
+      "origin": "remote-verified-source"
+    },
+    "train2.py": {
+      "sha256": "ca8307ea44e6e6b5cfc84081906a78fadcde1969d6b058b24582d2f1439e69ff",
+      "bytes": 23822,
+      "origin": "remote-verified-source"
+    },
+    "refine-logs/SECOND_DATASET_ADMISSION_20261023/DWIE_OFFICIAL_METRICS_20261024.py": {
+      "sha256": "0a939d851405a619f4af008b2c224899960c3bc16d54ae098ba2fe0181ed2006",
+      "bytes": 40462,
+      "origin": "local-archived-source"
+    },
+    "refine-logs/SECOND_DATASET_ADMISSION_20261023/DWIE_OFFICIAL_LICENSE_20261024.txt": {
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "origin": "local-archived-source"
+    },
+    "refine-logs/DEV_THRESHOLD_CALIBRATION_20261103/calibration_core.py": {
+      "sha256": "5cb58568ac93a3a496e900654bae0c367a674e732009e07db9c15f6af1db356a",
+      "bytes": 4232,
+      "origin": "local-archived-source"
+    },
+    "refine-logs/DEV_THRESHOLD_CALIBRATION_20261103/check_calibration.py": {
+      "sha256": "8e89aae189e48b53c5bf4aa60a8ff4bfdee171cbc41a4be1557533aca39e9518",
+      "bytes": 3181,
+      "origin": "local-archived-source"
+    },
+    "refine-logs/DEV_THRESHOLD_CALIBRATION_20261103/run_calibration.py": {
+      "sha256": "4e25380bd50307c980e2b2f56ec98c618c8903a5123a8cf5df2c34732edb3c97",
+      "bytes": 12374,
+      "origin": "local-archived-source"
+    }
+  }
+}
