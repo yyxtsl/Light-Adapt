@@ -40,7 +40,7 @@ The local conversion and input functions preserve the following protocol.
 5. Split documents into windows with 510 content tokens plus two special tokens, using stride 256. Average overlapping token states and merge attention using the implemented normalization.
 6. Evaluate full-ID concept-level relations as the primary metric. The official soft and hard metrics are supplemental cluster-level evaluations.
 
-The relevant conversion and input implementation is in `scripts/prepare_dwie_cpu_admission.py`, `scripts/prepare_dwie_adaptation.py`, and `scripts/ttmre_dwie_input.py`. Test preparation is implemented in `scripts/evaluate_ttmre_dwie_fixed_test.py`. The historical preparation launchers also require their archived paths, claims, and budget records. Use the public preparation instructions and configuration supplied with the release when rebuilding data in a new location.
+Use `reproduce_dwie.py --mode prepare` with explicit annotation, article-index and tokenizer paths; see [Portable workflows](WORKFLOWS.md). It reuses the preserved conversion and input functions without invoking historical launchers or their archived path/clock checks. Train/Dev preparation is the default. Test preparation requires the explicit `--include-test` option.
 
 The exact split file has SHA-256 `bec1c252fc7ed0e5e262c2a02b17dc236deb82431c8fbf36bfbad56e0d9a272e`. The relation mapping has SHA-256 `91fac5948767ed92c0c745c4a0dd4761e3ac19e36b19bea7826ee485c5da1c22`.
 
@@ -61,7 +61,9 @@ The recorded encoder and tokenizer come from [`FacebookAI/roberta-large`](https:
 
 The shared source checkpoint was selected at distant-pretraining epoch 16 in the authors' local workflow. Its SHA-256 is `4fd5aca22c20584dde442c2d80dba8a72db8fe20a4b9fa920fa7c43a7fe13ce9`. It initializes both C and B. Model D uses a separately trained source without TTM, selected at distant epoch 23. Model G starts from generic RoBERTa-large.
 
-The key source and adapted checkpoints remain on the authors' research server according to the 2026-11-26 inventory. That inventory checked file presence and metadata. Historical run manifests record the exact checkpoint hashes. Weights have not been included in this code candidate, and a public download location for the authors' checkpoints has not yet been assigned. The author must choose a distribution route before publishing checkpoint-access instructions.
+The checkpoint catalog in `metadata/checkpoints.json` lists 18 retained states with filenames, sizes and recorded SHA-256 values. Full streaming hashes of the shared source, C75, B75, B-average, DWIE-C75 and DWIE-B75 were checked again on 26 November 2026 and matched the recorded identities. Weights are separate from this code release. Hugging Face hosting is being prepared; public download URLs have not yet been assigned.
+
+The initial hosting plan includes six files: the shared source, Re-DocRED C75/B75/B-average, and DWIE C75/B75 (about 8.92 GB in total). Other seed and control states remain catalogued separately. `publish_checkpoints.py` verifies an author-provided file plan and optionally uploads to a private model repository. It performs no model loading or training; use the separately supplied author instructions for staging and publication.
 
 The upstream TTM-RE repository also links its own released weights. For the controlled comparisons in this study, use the matching local source identified above or reproduce its source-training workflow. Checkpoint identity determines which archived results can be replayed.
 
@@ -80,5 +82,5 @@ Uniform B checkpoint averaging uses exactly those three Dev-selected B states, e
 
 The recorded research runtime uses Python 3.10.22, PyTorch 2.7.1+cu128, CUDA 12.8, Transformers 4.34.0, NumPy 1.24.3, tqdm 4.65.0, and Unidecode 1.3.7. GPU measurements were collected on an NVIDIA GeForce RTX 5090 in FP32. Model-forward timing uses the batch sizes and timing boundaries stated in the paper.
 
-To replay model results, prepare the matching data, encoder files, and selected checkpoints, set their paths in the applicable configuration, and use the documented evaluation entry points. To retrain, use the recorded source initialization, target seeds, optimizer settings, and Dev-based checkpoint selection. The included reference results and file checks support inspecting the released evidence while weight distribution and portable execution preparation are completed.
+To replay model results, prepare the matching data, encoder files, and selected checkpoints, set their paths in the applicable configuration, and use the documented evaluation entry points. To retrain, use the recorded source initialization, target seeds, optimizer settings, and Dev-based checkpoint selection. The included reference results and file checks support inspecting the released evidence. The portable interfaces are implemented; their full pretrained-model Dev replay is still pending, as recorded in [Preparation status](PREPARATION_STATUS.md).
 

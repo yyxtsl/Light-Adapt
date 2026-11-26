@@ -7,7 +7,7 @@ Light-Adapt bypasses the entity-pair TTM pathway before target adaptation. The
 study compares it with full-path retention using the same Stage-1 source
 checkpoint, target objective and paired target seeds. The repository contains
 the recorded implementations, benchmark configuration, reference results and
-portable Re-DocRED commands.
+portable Re-DocRED, DWIE and Dev diagnostic commands.
 
 ## Get the code and check the download
 
@@ -81,7 +81,7 @@ python reproduce_redocred.py --mode validate --validate-for train --variant B \
   --checkpoint assets/checkpoints/source.pth
 ```
 
-The executable modes cover C/B target training, explicit checkpoint evaluation,
+The executable modes cover C/B/D/G/U target training, explicit checkpoint evaluation,
 C-off evaluation and uniform checkpoint averaging. Each mode accepts explicit
 asset and output paths. Training uses train/Dev selection. Evaluation uses an
 explicit split, with Dev as the default. See `--help` for the exact arguments.
@@ -100,7 +100,7 @@ python reproduce_redocred.py --mode evaluate --variant B --split dev \
 # Evaluate post-hoc bypass using the corresponding trained C checkpoint.
 python reproduce_redocred.py --mode evaluate --variant C-off --split dev \
   --model-dir assets/roberta-large --data-dir assets/redocred \
-  --checkpoint assets/checkpoints/C75.pth --output-dir runs/C75-off-dev
+  --checkpoint assets/checkpoints/redocred-C75.pth --output-dir runs/C75-off-dev
 
 # Average exactly three Dev-selected checkpoints.
 python reproduce_redocred.py --mode average \
@@ -145,10 +145,18 @@ the recorded C/B implementations.
 | Symmetric Dev calibration | `refine-logs/DEV_THRESHOLD_CALIBRATION_20261103/calibration_core.py` |
 
 The recorded scripts preserve their historical run identities and audit
-dependencies. `reproduce_redocred.py` supplies explicit-path commands for new
-Re-DocRED runs. The DWIE preprocessing and evaluation sources are preserved
-with their split metadata. Portable DWIE execution and distribution of the
-recorded weights are tracked in [Preparation status](docs/PREPARATION_STATUS.md).
+dependencies. Use the explicit-path entry points for new runs:
+
+- `reproduce_redocred.py`: Re-DocRED target adaptation, controls, evaluation and averaging.
+- `reproduce_dwie.py`: DWIE preparation, C/B/D/G adaptation, evaluation and Dev timing.
+- `reproduce_diagnostics.py`: symmetric calibration from saved Dev logits and Re-DocRED Dev timing.
+
+See [Portable workflows](docs/WORKFLOWS.md) for commands, data preparation and
+timing boundaries. The source-pretraining runners are preserved for provenance;
+the portable target commands start from the identified source checkpoint.
+Run the command/data checks with `python -B check_reproduce_redocred_cli.py`
+and `python -B check_portable_workflows.py`. Weight access and actual
+model-execution verification are tracked in [Preparation status](docs/PREPARATION_STATUS.md).
 
 ## Reference results
 

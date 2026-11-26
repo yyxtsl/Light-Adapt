@@ -1,4 +1,4 @@
-"""Portable entry point for the recorded Re-DocRED C/B target-stage recipe.
+"""Portable entry point for the recorded Re-DocRED target-stage recipes and controls.
 
 Run without arguments for usage. ``validate`` reads file metadata and the local
 RoBERTa config only. Training, evaluation, and averaging require explicit modes.
@@ -26,7 +26,8 @@ TRAIN_DOCUMENTS = 3053
 EVALUATION_DOCUMENTS = 500
 EPOCHS = 30
 BATCH_SIZE = 4
-EXPECTED_PARAMETERS = {"C": 381175401, "B": 363274849, "C-off": 363274849}
+EXPECTED_PARAMETERS = {"C": 381175401, "B": 363274849, "C-off": 363274849,
+                       "D": 363274849, "G": 363274849, "U": 363274849}
 TRAIN_SHA256 = "c40a137a1c57f3e2daaf5ebf511eaa1518f9305ffaa3052d46271921a91826f2"
 DEV_SHA256 = "051ee1d057204a5d08ef5502beacdadf191245b5eaf0e29ec2c607cf002c016f"
 TEST_SHA256 = "ea673b7ef91e16510d7eb88863d3903e47318dc5653ef361266f27ae3b84723c"
@@ -38,7 +39,7 @@ def parser():
                         choices=("validate", "train", "evaluate", "average"))
     result.add_argument("--validate-for", choices=("train", "evaluate", "average"),
                         default="evaluate", help="Asset checks performed in validate mode")
-    result.add_argument("--variant", choices=("C", "B", "C-off"), default="C")
+    result.add_argument("--variant", choices=("C", "B", "C-off", "D", "G", "U"), default="C")
     result.add_argument("--model-dir", type=Path, help="Local RoBERTa-large model/tokenizer directory")
     result.add_argument("--data-dir", type=Path,
                         help="Directory containing train_revised.json and the requested split")
@@ -50,6 +51,8 @@ def parser():
     result.add_argument("--split", choices=("dev", "test"), default="dev")
     result.add_argument("--seed", type=int, default=75, help="Target-stage seed")
     result.add_argument("--device", default="cuda:0")
+    result.add_argument("--export-logits", action="store_true",
+                        help="Save evaluation logits and label-independent pair order for diagnostics")
     result.add_argument("--expected-checkpoint-sha256",
                         help="Optional expected digest of --checkpoint")
     return result
@@ -100,7 +103,11 @@ def protocol(arguments):
         "selection": "Dev micro-F1 after each epoch's penultimate batch update; earliest tie",
         "pair_order": "all directed non-self pairs in head/tail entity-index order",
         "ttm": "pair-independent axis correction, unused single-step write bypass",
-        "memory": "frozen parameter in C, unread provenance buffer in B",
+        "memory": "frozen parameter in C; unread provenance buffer in bypass variants",
+        "initialization": ("generic encoder and fresh task parameters" if arguments.variant == "G"
+                           else "no-TTM Stage-1 source" if arguments.variant == "D"
+                           else "shared Stage-1 source"),
+        "pair_projections": "independent, head-to-tail initialization" if arguments.variant == "U" else "tied",
         "decoder": "all relation logits strictly greater than TH; no top-k cap",
         "train_test_reads": False,
     }
@@ -117,8 +124,13 @@ def required_inputs(arguments, operation):
         return list(arguments.checkpoints)
     if arguments.checkpoints is not None:
         raise ValueError("Use --checkpoint for training or evaluation")
-    if arguments.model_dir is None or arguments.data_dir is None or arguments.checkpoint is None:
+    generic_training = operation == "train" and arguments.variant == "G"
+    if arguments.model_dir is None or arguments.data_dir is None or (
+            arguments.checkpoint is None and not generic_training):
         raise ValueError("Supply --model-dir, --data-dir and --checkpoint")
+    if generic_training and (arguments.checkpoint is not None or
+                             arguments.expected_checkpoint_sha256 is not None):
+        raise ValueError("Generic training initializes from --model-dir only")
     if operation == "train" and arguments.variant == "C-off":
         raise ValueError("C-off evaluates a trained C checkpoint; use C or B for training")
     if operation == "train" and arguments.split != "dev":
@@ -131,7 +143,9 @@ def required_inputs(arguments, operation):
         raise ValueError("The recorded recipe requires a local RoBERTa-large configuration")
     files = [config, arguments.model_dir / "vocab.json", arguments.model_dir / "merges.txt",
              arguments.model_dir / "tokenizer.json", arguments.model_dir / "tokenizer_config.json",
-             arguments.data_dir / "train_revised.json", arguments.checkpoint]
+             arguments.data_dir / "train_revised.json"]
+    if arguments.checkpoint is not None:
+        files.append(arguments.checkpoint)
     weights = arguments.model_dir / "model.safetensors"
     if not weights.is_file():
         weights = arguments.model_dir / "pytorch_model.bin"
@@ -263,16 +277,25 @@ def load_model(arguments, priors, target_checkpoint):
     install_unused_write_bypass(model)
     install_ttm_checkpoint(model)
     model.requires_grad_(True)
-    if target_checkpoint and arguments.variant == "B":
+    # D's source was pretrained without TTM. Other adapted lightweight states
+    # likewise require the replacement geometry before strict target loading.
+    before_load_bypass = arguments.variant == "D" or (
+        target_checkpoint and arguments.variant in {"B", "G", "U"})
+    if before_load_bypass:
         install(model, "bypass")
-    state = torch.load(arguments.checkpoint, map_location="cpu", weights_only=True)
-    if not isinstance(state, dict) or MEMORY not in state:
-        raise ValueError("Expected an original raw model state dictionary")
-    model.load_state_dict(state, strict=True)
-    del state
-    if (not target_checkpoint and arguments.variant == "B") or arguments.variant == "C-off":
+    if arguments.checkpoint is not None:
+        state = torch.load(arguments.checkpoint, map_location="cpu", weights_only=True)
+        if not isinstance(state, dict) or MEMORY not in state:
+            raise ValueError("Expected an original raw model state dictionary")
+        model.load_state_dict(state, strict=True)
+        del state
+    if (not target_checkpoint and arguments.variant in {"B", "G", "U"}) or arguments.variant == "C-off":
         install(model, "bypass")
         gc.collect()
+    if arguments.variant == "U":
+        if not target_checkpoint:
+            model.tail_extractor.load_state_dict(model.head_extractor.state_dict(), strict=True)
+        model.args.model_type = "ATLOP"
     if arguments.variant == "C":
         model.mu_encoder.memory_tokens.requires_grad_(False)
     count = sum(parameter.numel() for parameter in model.parameters())
@@ -283,6 +306,9 @@ def load_model(arguments, priors, target_checkpoint):
 
 
 def checkpoint_identity(arguments):
+    if arguments.checkpoint is None:
+        return {"initialization": "generic RoBERTa-large with fresh task parameters",
+                "task_constructor_seed": 75, "source_task_checkpoint": None}
     checksum = digest(arguments.checkpoint)
     if arguments.expected_checkpoint_sha256 is not None:
         if checksum != arguments.expected_checkpoint_sha256.lower():
@@ -414,11 +440,12 @@ def train(arguments):
     emit("training_complete", checkpoint=str(destination), best_dev_F1=best_score)
 
 
-def predict(model, features, device, shared):
+def predict(model, features, device, shared, logit_output=None):
     import numpy as np
     import torch
     from evaluation import to_official
     predictions = []
+    saved_logits = []
     model.requires_grad_(False)
     model.eval()
     with torch.no_grad():
@@ -429,10 +456,15 @@ def predict(model, features, device, shared):
             if logits.dtype != torch.float32 or not torch.isfinite(logits).all():
                 raise RuntimeError("Nonfinite or non-FP32 evaluation logits")
             values = logits.detach().cpu().numpy()
+            if logit_output is not None:
+                saved_logits.append(values.copy())
             flags = np.zeros_like(values)
             flags[:, 1:] = values[:, 1:] > values[:, :1]
             flags[:, 0] = flags[:, 1:].sum(axis=1) == 0
             predictions.extend(to_official(flags, batch_features))
+    if logit_output is not None:
+        with Path(logit_output).open('xb') as stream:
+            np.save(stream, np.concatenate(saved_logits), allow_pickle=False)
     return predictions
 
 
@@ -450,7 +482,11 @@ def evaluate(arguments):
                           "vertexSet": document["vertexSet"], "labels": []}
         sparse = data.sparse_feature(model_document, tokenizer, rel2id, with_labels=False)
         features.append(data.expand_feature(sparse, with_labels=False))
-    predictions = predict(model, features, device, shared)
+    predictions = predict(model, features, device, shared,
+                          output / 'logits.npy' if arguments.export_logits else None)
+    if arguments.export_logits:
+        write_json(output / 'pair_order.json', [
+            {'title': feature['title'], 'hts': feature['hts']} for feature in features])
     prediction_path = output / "predictions.json"
     write_json(prediction_path, predictions)
     annotated = shared.train_facts(training)

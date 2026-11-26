@@ -1,22 +1,34 @@
 {
-  "release": "2026-11-26-upload-repair",
+  "release": "2026-11-26-portable-workflows",
   "hash_algorithm": "SHA-256",
   "files": {
     ".gitignore": {
       "bytes": 212,
       "sha256": "68c739709fc75e9a595079553a0b3161a2d9e8009c512e76f6294ee85014f663"
     },
+    "check_checkpoint_publication.py": {
+      "bytes": 2818,
+      "sha256": "61e104828eb8af540ef9b5b856c25382efaf5ad12341265335ef877fc98d63a2"
+    },
+    "check_portable_workflows.py": {
+      "bytes": 4804,
+      "sha256": "298f3d7259b6250ebbe343c1065cca92d9e790b6437d7cb2c59fc48adb4f7434"
+    },
     "check_reproduce_redocred_cli.py": {
       "bytes": 4967,
       "sha256": "2b8d60dc2faabfaef626acc0d5c8e0a6f2cf2f11abf5c709c8f06dc767742f69"
     },
     "docs/DATA_AND_MODELS.md": {
-      "bytes": 8145,
-      "sha256": "5c4ec599089a22d19d0a468f54a0bb4eca3bf21872f02b793ef6c053b0cf0aba"
+      "bytes": 8608,
+      "sha256": "18a0fc4c42eca98fd07b89edb04852ba9a6f877c96e1a4996c5df38e44e9520d"
     },
     "docs/PREPARATION_STATUS.md": {
-      "bytes": 1422,
-      "sha256": "d847fbd7385cea927fa068d19dccabed5e032856f01bffd3eeda3cb0506b29fd"
+      "bytes": 1857,
+      "sha256": "3135f29f40a4116558d0dd7a0ae84c4fd344ccf9469ef3293967c696841f3aeb"
+    },
+    "docs/WORKFLOWS.md": {
+      "bytes": 5723,
+      "sha256": "4874d83ddf229e030feb31d6d1b4fe4f20402f4654f92659cb00bf40f7f5b8e6"
     },
     "evaluation.py": {
       "bytes": 6359,
@@ -35,8 +47,8 @@
       "sha256": "ce15fe45203f4513192b8f5712909353bbd5ad7652badb6d61d8f9e1103fcd5d"
     },
     "metadata/checkpoints.json": {
-      "bytes": 4288,
-      "sha256": "afc6ab374a65965f84cb9b625896a4e347ad4ab7a5075fa79a4209a533e93b1d"
+      "bytes": 6527,
+      "sha256": "ac5b10410f706bd2b3372cd4b12d5d290cfebc892b8d836ceb18751cd9ee275c"
     },
     "metadata/dwie/rel2id.json": {
       "bytes": 1258,
@@ -58,9 +70,13 @@
       "bytes": 11271,
       "sha256": "e05cd6e6b68ec3a81bbe1f4e1f4735660f4607cd485e36c46c1737ef58bfbead"
     },
+    "publish_checkpoints.py": {
+      "bytes": 4553,
+      "sha256": "b984472cf78c0d4c2e9db92b8d30cf33878cc22d5ba3ed19ee339a02ad3cdd84"
+    },
     "README.md": {
-      "bytes": 7957,
-      "sha256": "55135e3d9e2ed5f8f15eb7503121857a4df0534214ad233e4025a8585c651808"
+      "bytes": 8687,
+      "sha256": "05b1b0356298cf89725742f33fa55708eb57bd594695afb839d04e4a4abdfe18"
     },
     "README_UPSTREAM.md": {
       "bytes": 1241,
@@ -86,9 +102,17 @@
       "bytes": 40462,
       "sha256": "0a939d851405a619f4af008b2c224899960c3bc16d54ae098ba2fe0181ed2006"
     },
+    "reproduce_diagnostics.py": {
+      "bytes": 8131,
+      "sha256": "6571e80d4d0ce9eab1f1376a5a47eaf65a91fea97ab380c45cae5fe8908f2ca8"
+    },
+    "reproduce_dwie.py": {
+      "bytes": 17584,
+      "sha256": "d02dd0ff67cbca12fe90c47b2e9005526b2fa2714a72e0dfd9f75b8fd7b85b3f"
+    },
     "reproduce_redocred.py": {
-      "bytes": 26265,
-      "sha256": "993ae81fd9e6ac2957dd397c7ddbd4c7089dcdbc191686d7ce97afb3ed60211d"
+      "bytes": 28577,
+      "sha256": "187369b7a337987930630523e431488148112cb841cf83edc9e350a63b131bae"
     },
     "requirements.txt": {
       "bytes": 108,

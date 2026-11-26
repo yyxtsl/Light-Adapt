@@ -6,104 +6,166 @@
   },
   "recorded_checkpoints": [
     {
-      "id": "Stage-1-source",
-      "role": "Shared local distant-pretraining initialization for C and B",
-      "suggested_filename": "source.pth",
+      "id": "source",
+      "filename": "source.pth",
       "sha256": "4fd5aca22c20584dde442c2d80dba8a72db8fe20a4b9fa920fa7c43a7fe13ce9",
+      "bytes": 1524862335,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "C75",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "C75.pth",
+      "filename": "redocred-C75.pth",
       "sha256": "f795bfc8c51f4b740d55abe992811e728481f36a4167b43036cbb8ca46673c37",
+      "bytes": 1524862335,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "B75",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "B75.pth",
+      "filename": "redocred-B75.pth",
       "sha256": "cfe8c2685c7ab65975ed7ab82ae3cdf565a50a2e1f7a9cd3042969365d9d26d8",
+      "bytes": 1453845935,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "D75",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "D75.pth",
+      "filename": "redocred-D75.pth",
       "sha256": "03cce3c6a150707b89ed36501689e59ecdc00cb19c874fb5daeb312d5bc54b5d",
+      "bytes": 1453845935,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "C76",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "C76.pth",
+      "filename": "redocred-C76.pth",
       "sha256": "04985ff6a7d1cf904bc1be14f6d94dd2d080996256ee31b850cb70a9253ed6e3",
+      "bytes": 1524862335,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "B76",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "B76.pth",
+      "filename": "redocred-B76.pth",
       "sha256": "fefa5d454a1f817aba15296cd297c271be689eef6871a6c480fe01c25783723c",
+      "bytes": 1453845935,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "D76",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "D76.pth",
+      "filename": "redocred-D76.pth",
       "sha256": "961ab8cac555b2bd9b57ad050b2114c245183ed97dd14bf947869ba4b3b2695d",
+      "bytes": 1453845935,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "C77",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "C77.pth",
+      "filename": "redocred-C77.pth",
       "sha256": "28e6f9fd427a8b85df11ac7a9415a99e1b4295fdb6ca57369268ce4a1c309ac0",
+      "bytes": 1524862335,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "B77",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "B77.pth",
+      "filename": "redocred-B77.pth",
       "sha256": "a576992d1f8b7a42bfafc23e6c05f319e674e692311222c4e10a51aeac186940",
+      "bytes": 1453845935,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "D77",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "D77.pth",
+      "filename": "redocred-D77.pth",
       "sha256": "083b47a1d668514f4e886831f5ab54b1273c2bc05b6766e6f2fb46f976f87a2f",
+      "bytes": 1453845935,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "G75",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "G75.pth",
+      "filename": "redocred-G75.pth",
       "sha256": "3877b53be14a51cb7afbd067efb60a1bd7b602098fc56c991bd18bfca664bd80",
+      "bytes": 1453845935,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
     },
     {
       "id": "U75",
-      "role": "Dev-selected target checkpoint",
-      "suggested_filename": "U75.pth",
+      "filename": "redocred-U75.pth",
       "sha256": "da522312c1a80a602aea49778cfc43f90211df035f036fde55d58401262b3d0e",
+      "bytes": 1453845935,
       "download_url": null,
-      "distribution_status": "author distribution route pending"
+      "distribution_status": "retained; hosting repository pending author confirmation"
+    },
+    {
+      "id": "no-TTM-source",
+      "filename": "no-ttm-source.pth",
+      "sha256": "086c57e6baa5de13ab166bf03babb7794d2591eecfcca37cc611443cae0e8c01",
+      "bytes": 1453845935,
+      "download_url": null,
+      "distribution_status": "retained; hosting repository pending author confirmation"
+    },
+    {
+      "id": "DWIE-C75",
+      "filename": "dwie-C75.pth",
+      "sha256": "627dae1fc17c585b11d25d34147866bf96696265c8b2abbfd4f3474d8275b80a",
+      "bytes": 1518173507,
+      "download_url": null,
+      "distribution_status": "retained; hosting repository pending author confirmation"
+    },
+    {
+      "id": "DWIE-B75",
+      "filename": "dwie-B75.pth",
+      "sha256": "2f09df53c067d831781bf7807581cf909e3e827c5dfe97e37b90c09ea550840d",
+      "bytes": 1447157603,
+      "download_url": null,
+      "distribution_status": "retained; hosting repository pending author confirmation"
+    },
+    {
+      "id": "DWIE-D75",
+      "filename": "dwie-D75.pth",
+      "sha256": "09384cef5712b364c48c5a20d2a258e45f20d52e2ac33bd59ac67923921ba33b",
+      "bytes": 1447157603,
+      "download_url": null,
+      "distribution_status": "retained; hosting repository pending author confirmation"
+    },
+    {
+      "id": "DWIE-G75",
+      "filename": "dwie-G75.pth",
+      "sha256": "51b6087ddb522471ae414d6abbaee94934a4faaa623373210fa8aab5456399ff",
+      "bytes": 1447157603,
+      "download_url": null,
+      "distribution_status": "retained; hosting repository pending author confirmation"
+    },
+    {
+      "id": "B-average",
+      "filename": "redocred-B-average.pth",
+      "sha256": "7dd09cba97822ae6dddb6690e5dbee330c299ab9dbe0b26e5175582728faf1ee",
+      "bytes": 1453842467,
+      "download_url": null,
+      "distribution_status": "retained; hosting repository pending author confirmation"
     }
   ],
-  "availability_checked": "2026-11-26 author research server, file existence and size only",
-  "historical_hashes_recomputed_on_server_this_session": false,
+  "availability_checked": "2026-11-26 research server; inventory plus streaming SHA-256 for five principal checkpoints",
+  "historical_hashes_recomputed_on_server_this_session": [
+    "source",
+    "C75",
+    "B75",
+    "DWIE-C75",
+    "DWIE-B75",
+    "B-average"
+  ],
   "C75_off": "Use C75 with the C-off evaluation variant.",
-  "B_average": "Generate from the three identified B75/B76/B77 states with equal weights."
+  "B_average": "Retained averaged state is catalogued. Alternatively regenerate from B75/B76/B77 with equal weights, FP64 accumulation and FP32 output.",
+  "proposed_hosting": {
+    "provider": "Hugging Face",
+    "repository_type": "model",
+    "suggested_name": "Light-Adapt-checkpoints",
+    "owner": "author account pending",
+    "visibility": "private during preparation"
+  }
 }
